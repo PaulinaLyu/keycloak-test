@@ -6,6 +6,7 @@ import {
   useRoutableTab,
 } from "../components/routable-tabs/RoutableTabs";
 import { useRealm } from "../context/realm-context/RealmContext";
+import { RealmInfoTab } from "./RealmInfoTab";
 import { TestTaskTab, toTestTask } from "./routes/TestTask";
 
 export default function TestTaskSection() {
@@ -43,9 +44,7 @@ export default function TestTaskSection() {
             title={<TabTitleText>{t("realm")}</TabTitleText>}
             {...realmTab}
           >
-            <PageSection variant="light">
-              <Text>{t("realm")}</Text>
-            </PageSection>
+            <RealmInfoTab />
           </Tab>
           <Tab
             id="users"
