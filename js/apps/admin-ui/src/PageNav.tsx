@@ -135,6 +135,7 @@ export const PageNav = () => {
               <LeftNav title="clientScopes" path="/client-scopes" />
               <LeftNav title="realmRoles" path="/roles" />
               <LeftNav title="users" path="/users" />
+              <LeftNav title="test" path="/test-task" />
               <LeftNav title="groups" path="/groups" />
               <LeftNav title="sessions" path="/sessions" />
               <LeftNav title="events" path="/events" />
