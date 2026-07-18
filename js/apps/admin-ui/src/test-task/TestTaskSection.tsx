@@ -1,4 +1,4 @@
-import { PageSection, Tab, TabTitleText, Text } from "@patternfly/react-core";
+import { PageSection, Tab, TabTitleText } from "@patternfly/react-core";
 import { useTranslation } from "react-i18next";
 import { ViewHeader } from "../components/view-header/ViewHeader";
 import {
@@ -8,6 +8,7 @@ import {
 import { useRealm } from "../context/realm-context/RealmContext";
 import { RealmInfoTab } from "./RealmInfoTab";
 import { TestTaskTab, toTestTask } from "./routes/TestTask";
+import { UsersTab } from "./UsersTab";
 
 export default function TestTaskSection() {
   const { t } = useTranslation();
@@ -52,9 +53,7 @@ export default function TestTaskSection() {
             title={<TabTitleText>{t("users")}</TabTitleText>}
             {...usersTab}
           >
-            <PageSection variant="light">
-              <Text>{t("users")}</Text>
-            </PageSection>
+            <UsersTab />
           </Tab>
         </RoutableTabs>
       </PageSection>
