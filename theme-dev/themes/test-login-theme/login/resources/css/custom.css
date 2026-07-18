@@ -1,0 +1,36 @@
+:root {
+  --keycloak-logo-url: url("../img/test-banner.svg");
+  --keycloak-logo-height: 48px;
+  --keycloak-logo-width: 280px;
+  --keycloak-card-top-color: #0f766e;
+  --test-login-accent: #0f766e;
+  --test-login-accent-hover: #0d9488;
+  --test-login-banner-bg: #ecfdf5;
+  --test-login-banner-text: #115e59;
+}
+
+.pf-v5-c-login__main-header {
+  border-top-color: var(--test-login-accent);
+}
+
+.pf-v5-c-button.pf-m-primary {
+  background-color: var(--test-login-accent);
+  border-color: var(--test-login-accent);
+}
+
+.pf-v5-c-button.pf-m-primary:hover {
+  background-color: var(--test-login-accent-hover);
+  border-color: var(--test-login-accent-hover);
+}
+
+.test-login-banner {
+  margin-top: 1rem;
+  padding: 0.75rem 1rem;
+  border-radius: 0.375rem;
+  background: var(--test-login-banner-bg);
+  color: var(--test-login-banner-text);
+  border: 1px solid #99f6e4;
+  text-align: center;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
