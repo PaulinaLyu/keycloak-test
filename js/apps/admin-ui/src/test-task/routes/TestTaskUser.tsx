@@ -9,6 +9,6 @@ export const TestTaskUserRoute: AppRouteObject = {
   element: <UserDetails />,
   handle: {
     access: "query-users",
-    breadcrumb: (t) => t("userDetails"),
+    breadcrumb: (t) => t("testTaskUserDetails"),
   },
 };

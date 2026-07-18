@@ -24,7 +24,7 @@ export const TestTaskRoute: AppRouteObject = {
   element: <TestTaskSection />,
   handle: {
     access: ["view-realm", "query-users"],
-    breadcrumb: (t) => t("test"),
+    breadcrumb: (t) => t("testTask"),
   },
 };
 

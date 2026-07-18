@@ -27,7 +27,7 @@ export default function TestTaskSection() {
 
   return (
     <>
-      <ViewHeader titleKey="test" divider={false} />
+      <ViewHeader titleKey="testTask" divider={false} />
       <PageSection
         data-testid="test-task-page"
         variant="light"
@@ -42,7 +42,7 @@ export default function TestTaskSection() {
           <Tab
             id="realm"
             data-testid="realmTab"
-            title={<TabTitleText>{t("realm")}</TabTitleText>}
+            title={<TabTitleText>{t("testTaskRealmTab")}</TabTitleText>}
             {...realmTab}
           >
             <RealmInfoTab />
@@ -50,7 +50,7 @@ export default function TestTaskSection() {
           <Tab
             id="users"
             data-testid="usersTab"
-            title={<TabTitleText>{t("users")}</TabTitleText>}
+            title={<TabTitleText>{t("testTaskUsersTab")}</TabTitleText>}
             {...usersTab}
           >
             <UsersTab />

@@ -49,7 +49,7 @@ export function UsersTab() {
         briefRepresentation: true,
       });
     } catch (error) {
-      addError("noUsersFoundError", error);
+      addError("testTaskUsersLoadError", error);
       return [];
     }
   };
@@ -60,38 +60,38 @@ export function UsersTab() {
         key={realm}
         loader={loader}
         isPaginated
-        ariaLabelKey="titleUsers"
-        searchPlaceholderKey="searchForUser"
+        ariaLabelKey="testTaskUsersTable"
+        searchPlaceholderKey="testTaskSearchUsers"
         emptyState={
           <ListEmptyState
-            message={t("noUsersFound")}
-            instructions={t("emptyInstructions")}
+            message={t("testTaskNoUsers")}
+            instructions={t("testTaskNoUsersInstructions")}
           />
         }
         columns={[
           {
             name: "username",
-            displayKey: "username",
+            displayKey: "testTaskUsername",
             cellRenderer: UsernameCell,
           },
           {
             name: "email",
-            displayKey: "email",
+            displayKey: "testTaskEmail",
             cellFormatters: [emptyFormatter()],
           },
           {
             name: "firstName",
-            displayKey: "firstName",
+            displayKey: "testTaskFirstName",
             cellFormatters: [emptyFormatter()],
           },
           {
             name: "lastName",
-            displayKey: "lastName",
+            displayKey: "testTaskLastName",
             cellFormatters: [emptyFormatter()],
           },
           {
             name: "enabled",
-            displayKey: "enabled",
+            displayKey: "testTaskEnabled",
             cellRenderer: EnabledCell,
           },
         ]}

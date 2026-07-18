@@ -34,14 +34,14 @@ export default function UserDetails() {
   useFetch(
     async () => {
       if (!id) {
-        throw new Error(t("notFound"));
+        throw new Error(t("testTaskUserNotFound"));
       }
 
       return adminClient.users.findOne({ id });
     },
     (user) => {
       if (!user) {
-        throw new Error(t("notFound"));
+        throw new Error(t("testTaskUserNotFound"));
       }
 
       setUser(user);
@@ -59,7 +59,7 @@ export default function UserDetails() {
 
   return (
     <>
-      <ViewHeader titleKey="userDetails" divider={false} />
+      <ViewHeader titleKey="testTaskUserDetails" divider={false} />
       <PageSection variant="light">
         <Button
           component={(props) => (
@@ -68,49 +68,61 @@ export default function UserDetails() {
           variant="link"
           isInline
         >
-          {t("back")}
+          {t("testTaskBackToUsers")}
         </Button>
         <Card className="pf-v5-u-mt-md" data-testid="test-task-user-details">
           <CardBody>
             <DescriptionList isHorizontal>
               <DescriptionListGroup>
-                <DescriptionListTerm>{t("username")}</DescriptionListTerm>
+                <DescriptionListTerm>
+                  {t("testTaskUsername")}
+                </DescriptionListTerm>
                 <DescriptionListDescription>
                   {getFieldValue(user.username)}
                 </DescriptionListDescription>
               </DescriptionListGroup>
               <DescriptionListGroup>
-                <DescriptionListTerm>{t("email")}</DescriptionListTerm>
+                <DescriptionListTerm>{t("testTaskEmail")}</DescriptionListTerm>
                 <DescriptionListDescription>
                   {getFieldValue(user.email)}
                 </DescriptionListDescription>
               </DescriptionListGroup>
               <DescriptionListGroup>
-                <DescriptionListTerm>{t("firstName")}</DescriptionListTerm>
+                <DescriptionListTerm>
+                  {t("testTaskFirstName")}
+                </DescriptionListTerm>
                 <DescriptionListDescription>
                   {getFieldValue(user.firstName)}
                 </DescriptionListDescription>
               </DescriptionListGroup>
               <DescriptionListGroup>
-                <DescriptionListTerm>{t("lastName")}</DescriptionListTerm>
+                <DescriptionListTerm>
+                  {t("testTaskLastName")}
+                </DescriptionListTerm>
                 <DescriptionListDescription>
                   {getFieldValue(user.lastName)}
                 </DescriptionListDescription>
               </DescriptionListGroup>
               <DescriptionListGroup>
-                <DescriptionListTerm>{t("enabled")}</DescriptionListTerm>
+                <DescriptionListTerm>
+                  {t("testTaskEnabled")}
+                </DescriptionListTerm>
                 <DescriptionListDescription>
                   {user.enabled ? t("enabled") : t("disabled")}
                 </DescriptionListDescription>
               </DescriptionListGroup>
               <DescriptionListGroup>
-                <DescriptionListTerm>{t("emailVerified")}</DescriptionListTerm>
+                <DescriptionListTerm>
+                  {t("testTaskEmailVerified")}
+                </DescriptionListTerm>
                 <DescriptionListDescription>
                   {user.emailVerified ? t("yes") : t("no")}
                 </DescriptionListDescription>
               </DescriptionListGroup>
               <DescriptionListGroup>
-                <DescriptionListTerm>{t("createdAt")}</DescriptionListTerm>
+                <DescriptionListTerm>
+                  {t("testTaskCreatedAt")}
+                </DescriptionListTerm>
                 <DescriptionListDescription>
                   {createdAt}
                 </DescriptionListDescription>

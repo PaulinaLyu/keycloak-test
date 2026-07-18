@@ -19,9 +19,9 @@ export function RealmInfoTab() {
   const copyRealmName = async () => {
     try {
       await navigator.clipboard.writeText(realm);
-      addAlert(t("copySuccess"), AlertVariant.success);
+      addAlert(t("testTaskRealmCopied"), AlertVariant.success);
     } catch (error) {
-      addError("clipboardCopyError", error);
+      addError("testTaskClipboardCopyError", error);
     }
   };
 
@@ -29,7 +29,7 @@ export function RealmInfoTab() {
     <PageSection variant="light">
       <DescriptionList isHorizontal>
         <DescriptionListGroup>
-          <DescriptionListTerm>{t("currentRealm")}</DescriptionListTerm>
+          <DescriptionListTerm>{t("testTaskCurrentRealm")}</DescriptionListTerm>
           <DescriptionListDescription>{realm}</DescriptionListDescription>
         </DescriptionListGroup>
       </DescriptionList>
@@ -38,7 +38,7 @@ export function RealmInfoTab() {
         data-testid="copy-realm-name"
         onClick={() => void copyRealmName()}
       >
-        {t("copy")}
+        {t("testTaskCopyRealm")}
       </Button>
     </PageSection>
   );
