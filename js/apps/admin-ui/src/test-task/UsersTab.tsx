@@ -6,17 +6,32 @@ import {
 } from "@keycloak/keycloak-ui-shared";
 import { PageSection } from "@patternfly/react-core";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 import { useAdminClient } from "../admin-client";
 import { useRealm } from "../context/realm-context/RealmContext";
 import { emptyFormatter } from "../util";
+import { toTestTaskUser } from "./routes/TestTask";
 
 const DEFAULT_FIRST_USER = 0;
 const DEFAULT_MAX_USERS = 10;
+const EMPTY_VALUE = "-";
 
 const EnabledCell = (user: UserRepresentation) => {
   const { t } = useTranslation();
 
   return user.enabled ? t("enabled") : t("disabled");
+};
+
+const UsernameCell = (user: UserRepresentation) => {
+  const { realm } = useRealm();
+
+  if (!user.id) {
+    return user.username || EMPTY_VALUE;
+  }
+
+  return (
+    <Link to={toTestTaskUser({ realm, id: user.id })}>{user.username}</Link>
+  );
 };
 
 export function UsersTab() {
@@ -57,7 +72,7 @@ export function UsersTab() {
           {
             name: "username",
             displayKey: "username",
-            cellFormatters: [emptyFormatter()],
+            cellRenderer: UsernameCell,
           },
           {
             name: "email",

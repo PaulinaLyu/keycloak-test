@@ -10,7 +10,14 @@ export type TestTaskParams = {
   tab?: TestTaskTab;
 };
 
+export type TestTaskUserParams = {
+  realm: string;
+  id: string;
+};
+
 const TestTaskSection = lazy(() => import("../TestTaskSection"));
+
+export const TestTaskUserRoutePath = "/:realm/test-task/users/:id";
 
 export const TestTaskRoute: AppRouteObject = {
   path: "/:realm/test-task",
@@ -33,3 +40,7 @@ export const toTestTask = (params: TestTaskParams): Partial<Path> => {
     pathname: generateEncodedPath(path, params),
   };
 };
+
+export const toTestTaskUser = (params: TestTaskUserParams): Partial<Path> => ({
+  pathname: generateEncodedPath(TestTaskUserRoutePath, params),
+});
