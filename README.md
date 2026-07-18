@@ -15,8 +15,13 @@ Add authentication to applications and secure services with minimum effort. No n
 
 Keycloak provides user federation, strong authentication, user management, fine-grained authorization, and more.
 
+## Тестовое задание
+
+Инструкция по Admin UI и Login Theme: [README-test-task.md](README-test-task.md).
+
 
 ## Help and Documentation
+
 
 * [Documentation](https://www.keycloak.org/documentation.html)
 * [User Mailing List](https://groups.google.com/d/forum/keycloak-user) - Mailing list for help and general questions about Keycloak
